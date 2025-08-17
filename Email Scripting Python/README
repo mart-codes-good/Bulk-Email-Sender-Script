@@ -1,0 +1,47 @@
+Multiple Email Writer Script
+
+This Python script helps send emails with a similar structure to multiple recipients.
+It reads from a recipients.csv file to get each recipient’s name, email, and context (the personalized part of the email that changes for each person).
+
+Before you begin:
+
+    Create a new file in the project folder called .env.
+
+    Inside, add your email and app password exactly like this:
+
+        My_Email=youremail@example.com
+        App_Password=yourapppassword
+
+    Save the file, the script will load these automatically. HOORAY!
+    (You need a Gmail AppPassword, you can google how to get it, you do need 2fa for it)
+
+Instructions:
+
+    1)Open the script and go to line 55.
+    Change the Subject value to whatever subject line you want (it’s originally set as "Enter your email subject here!").
+
+    2)Draft the structure of the email body. 
+    A template is already included. You can adjust spacing as needed.
+    The first line may look indented in the code due to Python formatting, but it will display correctly in the email.
+
+    3)Add your recipients to the CSV file in this format:
+        id,name,email,context
+    ex: 0,Josuke,locodiamond@gmail.com,"Hey! Please remember to fix my bike!"
+
+Important:
+
+    Keep the CSV in the correct format (id,name,email,context).
+
+    Do not put spaces after commas. (Spaces are fine inside quotes for the context field.)
+
+    IDs should start at 0 and increment (0,1,2,3...).
+
+    Double-check emails are typed correctly. A malformed address will cause errors.
+
+    If an error occurs, only the emails before the error will be sent.
+    You can check the console output to see which emails were successfully delivered.
+
+Future Updates:
+    - Improved formatting (likely HTML)
+    - Easier email body drafting
+    - Better error handling
